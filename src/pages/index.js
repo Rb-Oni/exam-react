@@ -1,5 +1,6 @@
 import Head from 'next/head'
 import {useEffect, useState} from 'react';
+import Navbar from "../components/navbar";
 
 export default function Home() {
 
@@ -23,8 +24,8 @@ export default function Home() {
 				<meta name="viewport" content="width=device-width, initial-scale=1"/>
 				<link rel="icon" href="/favicon.ico"/>
 			</Head>
+			<Navbar></Navbar>
 			<main>
-				<h1 className={'text-5xl'}>Hello</h1>
 				<section className={'my-10 px-4 grid grid-cols-2 lg:grid-cols-4 xl:grid-cols-6 gap-4'}>
 					{name.map((data) => {
 						return (
