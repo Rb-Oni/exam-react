@@ -9,7 +9,7 @@ const Navbar = () => {
 						<a className={"font-bold text-6xl hover:text-blue-500 focus:text-blue-500 ease-in duration-150"}
 						   aria-current="page" href="/">EXAM REACT</a>
 					</div>
-					<nav className={"flex-col flex-grow hidden pb-4 md:pb-0 md:flex md:justify-end md:flex-row"}>
+					<nav className={"flex-col flex-grow pb-4 md:pb-0 md:flex md:justify-end md:flex-row"}>
 						<a className={"hover:text-blue-500 focus:text-blue-500 font-bold text-2xl ease-in duration-150 md:mt-0 md:ml-4_home"}
 						   href="/">Accueil</a>
 					</nav>
