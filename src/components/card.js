@@ -2,38 +2,56 @@ import React, {useEffect, useState} from "react";
 import Link from 'next/link'
 
 const Card = () => {
-
-	const [name, setName] = useState([]);
+	const [places, setPlaces] = useState([]);
+	const [filteredPlaces, setFilteredPlaces] = useState([]);
+	const [searchInput, setSearchInput] = useState('');
 
 	useEffect(() => {
-		names()
-	}, [])
+		fetch('/api/places')
+			.then((response) => response.json())
+			.then((data) => {
+				setPlaces(data);
+				setFilteredPlaces(data);
+			});
+	}, []);
 
-	const names = async () => {
-		const response = await fetch('http://localhost:3000/api/places');
+	const handleSearch = (e) => {
+		const searchInputValue = e.target.value.toLowerCase();
+		setSearchInput(searchInputValue);
 
-		setName(await response.json())
-	}
+		const filtered = places.filter(
+			(place) =>
+				place.name.toLowerCase().includes(searchInputValue) ||
+				place.city.name.toLowerCase().includes(searchInputValue)
+		);
+		setFilteredPlaces(filtered);
+	};
 
 	return (
 		<>
-			{name.map((data) => {
-				return (
-					<Link href={{pathname: '/place', query: data }}
-					      className={'mx-auto border-2 border-blue-500 rounded-lg'} key={data.id}>
-						<img src={data.image}
-						     className={'opacity-90 hover:opacity-100 duration-150 rounded-t-md'}
-						     alt="{data.image}"/>
-						<div className={'flex flex-col py-1 px-2'}>
-							<div className={'flex justify-between'}>
-								<h2 className={'font-bold'}>{data.city.name}</h2>
-								<span className={'font-bold'}>{data.priceByNight} €</span>
+			<section className={'my-10 px-4 container mx-auto'}>
+				<input id="search" type="text" placeholder="search" value={searchInput} onChange={handleSearch}/>
+			</section>
+
+			<section className={'my-10 px-4 container mx-auto grid grid-cols-2 lg:grid-cols-4 xl:grid-cols-6 gap-6'}>
+				{filteredPlaces.map((place) => {
+					return (
+						<Link key={place.id} href={`/${place.id}`}
+						      className={'mx-auto border-2 border-blue-500 rounded-lg'}>
+							<img src={place.image}
+							     className={'opacity-90 hover:opacity-100 duration-150 rounded-t-md'}
+							     alt={place.image}/>
+							<div className={'flex flex-col py-1 px-2'}>
+								<div className={'flex justify-between'}>
+									<h2 className={'font-bold'}>{place.city.name}</h2>
+									<span className={'font-bold'}>{place.priceByNight} €</span>
+								</div>
+								<span>{place.name}</span>
 							</div>
-							<span>{data.name}</span>
-						</div>
-					</Link>
-				)
-			})}
+						</Link>
+					)
+				})}
+			</section>
 		</>
 	)
 }
