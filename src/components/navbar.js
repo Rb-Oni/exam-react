@@ -3,7 +3,7 @@ import React from "react";
 const Navbar = () => {
 	return (
 		<>
-			<div className={"container-fluid border-b-2 border-blue-500 bg-white"}>
+			<div className={"container-fluid border-b-2 border-blue-500"}>
 				<div
 					className={"flex flex-col px-4 md:items-center md:justify-between md:flex-row md:px-8 lg:px-12 gap-8"}>
 					<div className={"flex flex-row justify-between py-2"}>
@@ -12,9 +12,13 @@ const Navbar = () => {
 					</div>
 					<nav className={"flex-col flex-grow pb-4 md:pb-0 md:flex md:justify-end md:flex-row gap-4"}>
 						<a className={"hover:text-blue-500 focus:text-blue-500 font-bold text-2xl ease-in duration-150 md:mt-0 md:ml-4_home"}
-						   href="/">Accueil</a>
+						   href="/">Home</a>
+						<a className={"hover:text-blue-500 focus:text-blue-500 font-bold text-2xl ease-in duration-150 md:mt-0 md:ml-4_home"}
+						   href="/user/login">Login</a>
+						<a className={"hover:text-blue-500 focus:text-blue-500 font-bold text-2xl ease-in duration-150 md:mt-0 md:ml-4_home"}
+						   href="/user/register">Register</a>
 					</nav>
-					<a href={'#'}
+					<a href={'/user/update'}
 					   className={'justify-end hover:text-blue-500 focus:text-blue-500 ease-in duration-150'}>
 						<svg xmlns="http://www.w3.org/2000/svg" className="h-10 w-10 text-bluec" fill="none"
 						     viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2">

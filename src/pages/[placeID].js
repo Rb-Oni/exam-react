@@ -13,8 +13,8 @@ export default function PlaceID() {
 			.then(data => setPlace(data));
 	}, [placeID]);
 
-	// J'ai essayé de display le nom de l'hôte et de la ville en vain
-	// console.log(place.host.name);
+	// J'ai essayé de display le nom de l'hôte et de la ville en vain alors que je récupère bien l'objet
+	console.log(place);
 	return (
 		<>
 			<Navbar></Navbar>
