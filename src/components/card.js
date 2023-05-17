@@ -33,7 +33,7 @@ const Card = () => {
 				<input className={'text-black px-4 py-2 rounded-lg shadow'} id="search" type="text" placeholder="Search" value={searchInput} onChange={handleSearch}/>
 			</section>
 
-			<section className={'my-10 px-4 container mx-auto grid grid-cols-2 lg:grid-cols-4 xl:grid-cols-6 gap-6'}>
+			<section className={'my-10 px-4 container mx-auto grid grid-cols-2 lg:grid-cols-4 xl:grid-cols-5 gap-6'}>
 				{filteredPlaces.map((place) => {
 					return (
 						<Link key={place.id} href={`/${place.id}`}
@@ -41,10 +41,10 @@ const Card = () => {
 							<img src={place.image}
 							     className={'opacity-80 hover:opacity-100 duration-150 rounded-t-md'}
 							     alt={place.image}/>
-							<div className={'flex flex-col py-1 px-2'}>
+							<div className={'flex flex-col py-2 px-4'}>
 								<div className={'flex justify-between'}>
-									<h2 className={'font-bold'}>{place.city.name}</h2>
-									<span className={'font-bold'}>{place.priceByNight} €</span>
+									<h2 className={'font-semibold'}>{place.city.name}</h2>
+									<span><span className={'font-semibold'}>€{place.priceByNight}</span>/night</span>
 								</div>
 								<span>{place.name}</span>
 							</div>
