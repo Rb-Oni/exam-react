@@ -1,6 +1,9 @@
 import React from "react";
+import {useRouter} from "next/router";
 
 const Navbar = () => {
+    const router = useRouter();
+
     return (
         <>
             <div className={"container-fluid shadow"}>
@@ -15,15 +18,15 @@ const Navbar = () => {
                         </a>
                     </div>
                     <nav className={"flex-col flex-grow pb-4 md:pb-0 md:flex md:justify-end md:flex-row gap-4"}>
-                        <a className={"hover:text-custom focus:text-custom text-2xl ease-in duration-150 md:mt-0 md:ml-4_home"}
+                        <a className={router.pathname === '/' ? 'text-custom text-2xl ease-in duration-150 md:mt-0 md:ml-4' : 'hover:text-custom focus:text-custom text-2xl ease-in duration-150 md:mt-0 md:ml-4'}
                            href="/">Home</a>
-                        <a className={"hover:text-custom focus:text-custom text-2xl ease-in duration-150 md:mt-0 md:ml-4_home"}
+                        <a className={router.pathname === '/user/login' ? 'text-custom text-2xl ease-in duration-150 md:mt-0 md:ml-4' : 'hover:text-custom focus:text-custom text-2xl ease-in duration-150 md:mt-0 md:ml-4'}
                            href="/user/login">Login</a>
-                        <a className={"hover:text-custom focus:text-custom text-2xl ease-in duration-150 md:mt-0 md:ml-4_home"}
+                        <a className={router.pathname === '/user/register' ? 'text-custom text-2xl ease-in duration-150 md:mt-0 md:ml-4' : 'hover:text-custom focus:text-custom text-2xl ease-in duration-150 md:mt-0 md:ml-4'}
                            href="/user/register">Register</a>
                     </nav>
                     <a href={'/user/update'}
-                       className={'justify-end hover:text-custom focus:text-custom ease-in duration-150'}>
+                       className={router.pathname === '/user/update' ? 'justify-end text-custom text-2xl ease-in duration-150 md:mt-0 md:ml-4' : 'justify-end hover:text-custom focus:text-custom text-2xl ease-in duration-150 md:mt-0 md:ml-4'}>
                         <svg xmlns="http://www.w3.org/2000/svg" className="h-10 w-10 text-bluec" fill="none"
                              viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2">
                             <path strokeLinecap="round" strokeLinejoin="round"
