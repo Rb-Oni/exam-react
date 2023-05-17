@@ -36,7 +36,7 @@ export default function RegisterPage() {
 			<section>
 				<form className={'container mx-auto my-16 flex flex-col items-center'} onSubmit={handleSubmit}>
 					<div className="flex flex-col gap-4 px-12 py-8 shadow">
-						<h2 className={'text-2xl mb-6 uppercase text-center'}>Inscription</h2>
+						<h2 className={'text-2xl mb-6 uppercase text-center'}>Register</h2>
 						<div className="flex flex-col">
 							<label htmlFor="inputName">Name</label>
 							<input type="text" id={'inputName'} className={'border rounded px-2 py-1'} value={name}
@@ -59,9 +59,9 @@ export default function RegisterPage() {
 							       value={confirmPassword}
 							       onChange={(e) => setConfirmPassword(e.target.value)} required={true}/>
 						</div>
-						<p>Or <Link href='/user/login'> sign in</Link></p>
+						<p>Or <Link href='/user/login' className={'text-custom hover:underline'}> sign in</Link></p>
 						<button type="submit"
-						        className={'bg-green-500 hover:bg-black duration-150 text-white py-2 rounded'}>Register
+						        className={'bg-custom font-semibold uppercase hover:bg-black duration-150 text-white py-2 rounded'}>Register
 						</button>
 					</div>
 				</form>

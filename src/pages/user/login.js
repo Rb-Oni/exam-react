@@ -43,9 +43,9 @@ export default function LoginPage() {
 							       value={password}
 							       onChange={(e) => setPassword(e.target.value)} required={true} autoFocus={true}/>
 						</div>
-						<p>Or <Link href='/user/register' className={'text-blue-500 hover:underline'}>sign up</Link></p>
+						<p>Or <Link href='/user/register' className={'text-custom hover:underline'}>sign up</Link></p>
 						<button type="submit"
-						        className={'bg-blue-500 hover:bg-black duration-150 text-white py-2 rounded'}>
+						        className={'bg-custom font-semibold uppercase hover:bg-black duration-150 text-white py-2 rounded'}>
 							Connexion
 						</button>
 					</div>

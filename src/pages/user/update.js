@@ -52,7 +52,7 @@ export default function LoginPage() {
 							       onChange={(e) => setPassword(e.target.value)} required={true}/>
 						</div>
 						<button type="submit"
-						        className={'bg-orange-500 hover:bg-black duration-150 text-white py-2 rounded'}>Update
+						        className={'bg-custom font-semibold uppercase hover:bg-black duration-150 text-white py-2 rounded'}>Update
 						</button>
 					</div>
 				</form>
