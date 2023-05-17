@@ -2,9 +2,9 @@ import {useState} from "react";
 import Navbar from "../../components/navbar";
 
 export default function LoginPage() {
-	const [email, setEmail] = useState("");
-	const [password, setPassword] = useState("");
-	const [name, setName] = useState("");
+	const [email, setEmail] = useState('');
+	const [password, setPassword] = useState('');
+	const [name, setName] = useState('');
 
 	const handleSubmit = (e) => {
 		const token = localStorage.getItem('token');
@@ -25,6 +25,7 @@ export default function LoginPage() {
 					throw new Error('error')
 				}
 			});
+		console.log(name)
 	};
 
 	return (

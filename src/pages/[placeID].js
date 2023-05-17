@@ -23,7 +23,7 @@ export default function PlaceID() {
 					<h1 className={'text-5xl font-bold'}>{place.name}</h1>
 					{/*<h2>{place.host.name}</h2>*/}
 					<div className={'flex my-4 gap-4'}>
-						<img src={place.image} className={''} alt={place.image}/>
+						<img src={place.image} alt={place.image}/>
 						<p>{place.description}</p>
 					</div>
 				</section>
