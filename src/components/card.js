@@ -36,7 +36,7 @@ const Card = () => {
 			<section className={'my-10 px-4 container mx-auto grid grid-cols-2 lg:grid-cols-4 xl:grid-cols-5 gap-6'}>
 				{filteredPlaces.map((place) => {
 					return (
-						<Link key={place.id} href={`/${place.id}`}
+						<Link key={place.id} href={`/place/${place.id}`}
 						      className={'mx-auto shadow rounded-lg'}>
 							<img src={place.image}
 							     className={'opacity-80 hover:opacity-100 duration-150 rounded-t-md'}
