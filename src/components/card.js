@@ -30,14 +30,14 @@ const Card = () => {
 	return (
 		<>
 			<section className={'my-10 px-4 container mx-auto'}>
-				<input className={'text-black px-4 py-2 rounded-lg border-2 border-blue-500'} id="search" type="text" placeholder="Search" value={searchInput} onChange={handleSearch}/>
+				<input className={'text-black px-4 py-2 rounded-lg shadow'} id="search" type="text" placeholder="Search" value={searchInput} onChange={handleSearch}/>
 			</section>
 
 			<section className={'my-10 px-4 container mx-auto grid grid-cols-2 lg:grid-cols-4 xl:grid-cols-6 gap-6'}>
 				{filteredPlaces.map((place) => {
 					return (
 						<Link key={place.id} href={`/${place.id}`}
-						      className={'mx-auto border-2 border-blue-500 rounded-lg'}>
+						      className={'mx-auto shadow rounded-lg'}>
 							<img src={place.image}
 							     className={'opacity-80 hover:opacity-100 duration-150 rounded-t-md'}
 							     alt={place.image}/>
